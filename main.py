@@ -1,6 +1,6 @@
 import json
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QMainWindow, QMessageBox
 from ui import Ui_MainWindow
 
 class NoteWidget(QMainWindow):
@@ -14,6 +14,9 @@ class NoteWidget(QMainWindow):
 
     def connects(self):
         self.ui.list_note.itemClicked.connect(self.show_notes)
+        self.ui.create_btn.clicked.connect(self.add_note)
+        self.ui.save_btn4.clicked.connect(self.save_note)
+        self.ui.delete_btn5.clicked.connect(self.del_note)
 
 
 
@@ -35,6 +38,39 @@ class NoteWidget(QMainWindow):
         self.ui.listWidget_2.clear()
         self.ui.listWidget_2.addItems(self.notes[name]["теги"])
 
+    def add_note(self):
+        self.ui.lineEdit.clear()
+        self.ui.textEdit.clear()
+        self.ui.listWidget_2.clear()
+
+    def save_file(self):
+        try:
+            with open("notes.json", "w", encoding="utf8") as files:
+                json.dump(self.notes, files, ensure_ascii=False)
+        except:
+            message = QMessageBox()
+            message.setText("Не вдалося зберегти!")
+            message.show()
+            message.exec_()
+
+    def save_note(self):
+        title = self.ui.lineEdit.text()
+        text = self.ui.textEdit.toPlainText()
+
+        self.notes[title] = {"текст": text, "теги": []}
+        self.save_file()
+        self.ui.list_note.clear()
+        self.ui.list_note.addItems(self.notes)
+
+    def del_note(self):
+        title = self.ui.lineEdit.text()
+        if title in self.notes:
+            del self.notes[title]
+            self.save_file()
+            self.add_note()
+            self.ui.list_note.clear()
+            self.ui.list_note.addItems(self.notes)
+        
 
 app = QApplication([])
 ex = NoteWidget()
