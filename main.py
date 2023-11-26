@@ -1,6 +1,6 @@
 import json
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QMessageBox, QInputDialog
 from ui import Ui_MainWindow
 
 class NoteWidget(QMainWindow):
@@ -17,6 +17,8 @@ class NoteWidget(QMainWindow):
         self.ui.create_btn.clicked.connect(self.add_note)
         self.ui.save_btn4.clicked.connect(self.save_note)
         self.ui.delete_btn5.clicked.connect(self.del_note)
+        self.ui.add_tag.clicked.connect(self.add_tag)
+        self.ui.open_btn3.clicked.connect(self.del_tag)
 
 
 
@@ -56,8 +58,10 @@ class NoteWidget(QMainWindow):
     def save_note(self):
         title = self.ui.lineEdit.text()
         text = self.ui.textEdit.toPlainText()
-
-        self.notes[title] = {"текст": text, "теги": []}
+        if title not in self.notes:
+            self.notes[title] = {"текст": text, "теги": []}
+        else:
+             self.notes[title]["текст"] = text
         self.save_file()
         self.ui.list_note.clear()
         self.ui.list_note.addItems(self.notes)
@@ -71,6 +75,27 @@ class NoteWidget(QMainWindow):
             self.ui.list_note.clear()
             self.ui.list_note.addItems(self.notes)
         
+
+    def add_tag(self):
+        title = self.ui.lineEdit.text() 
+        tag_title, ok = QInputDialog.getText(self, "Введіть, тег", "Назва тега")
+        if ok and tag_title != "":
+            self.notes[title]["теги"].append(tag_title)
+            self.ui.listWidget_2.clear()
+            self.ui.listWidget_2.addItems(self.notes[title]["теги"])
+            
+    def del_tag(self):
+        title = self.ui.lineEdit.text() 
+        try:
+            tag_title = self.ui.tag_list.selectedItems()[0].text()
+        except:
+            tag_title = None
+        if tag_title and title != "":
+            self.notes[title]["теги"].remove(tag_title)
+            self.ui.listWidget_2.clear()
+            self.iu.listWidget_2.addItems(self.notes[title]["теги"])
+
+
 
 app = QApplication([])
 ex = NoteWidget()

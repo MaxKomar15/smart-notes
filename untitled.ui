@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>804</width>
     <height>535</height>
    </rect>
   </property>
@@ -28,8 +28,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#0f3675;
-color:white;
-border-radius:15px;</string>
+color:white;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -43,8 +42,7 @@ border-radius:15px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#0f3675;
-color:white;
-border-radius:15px;</string>
+color:white;</string>
     </property>
     <property name="text">
      <string/>
@@ -54,7 +52,7 @@ border-radius:15px;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>20</y>
+      <y>0</y>
       <width>86</width>
       <height>23</height>
      </rect>
@@ -72,7 +70,7 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>220</y>
+      <y>200</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -90,22 +88,21 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>60</y>
+      <y>40</y>
       <width>131</width>
       <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#0f3675;
-color:white;
-border-radius:15px;</string>
+color:white;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="save_btn4">
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>220</y>
+      <y>200</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -123,7 +120,7 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>20</y>
+      <y>0</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -141,7 +138,7 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>450</y>
+      <y>420</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -159,7 +156,7 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>450</y>
+      <y>420</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -177,15 +174,32 @@ border-radius:10px;</string>
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>260</y>
-      <width>141</width>
+      <y>240</y>
+      <width>131</width>
       <height>171</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:#0f3675;
-color:white;
-border-radius:15px;</string>
+color:white;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_tag">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>450</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;
+color:black;
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>Додати</string>
     </property>
    </widget>
   </widget>
@@ -194,7 +208,7 @@ border-radius:15px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>804</width>
      <height>21</height>
     </rect>
    </property>

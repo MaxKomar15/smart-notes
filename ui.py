@@ -14,74 +14,76 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 535)
+        MainWindow.resize(804, 535)
         MainWindow.setStyleSheet("background-color:#b6b8a5;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(10, 70, 601, 441))
         self.textEdit.setStyleSheet("background-color:#0f3675;\n"
-"color:white;\n"
-"border-radius:15px;")
+"color:white;")
         self.textEdit.setObjectName("textEdit")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(10, 0, 601, 41))
         self.lineEdit.setStyleSheet("background-color:#0f3675;\n"
-"color:white;\n"
-"border-radius:15px;")
+"color:white;")
         self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
         self.create_btn = QtWidgets.QPushButton(self.centralwidget)
-        self.create_btn.setGeometry(QtCore.QRect(620, 20, 86, 23))
+        self.create_btn.setGeometry(QtCore.QRect(620, 0, 86, 23))
         self.create_btn.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.create_btn.setObjectName("create_btn")
         self.edit_btn2 = QtWidgets.QPushButton(self.centralwidget)
-        self.edit_btn2.setGeometry(QtCore.QRect(620, 220, 75, 23))
+        self.edit_btn2.setGeometry(QtCore.QRect(620, 200, 75, 23))
         self.edit_btn2.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.edit_btn2.setObjectName("edit_btn2")
         self.list_note = QtWidgets.QListWidget(self.centralwidget)
-        self.list_note.setGeometry(QtCore.QRect(640, 60, 131, 141))
+        self.list_note.setGeometry(QtCore.QRect(640, 40, 131, 141))
         self.list_note.setStyleSheet("background-color:#0f3675;\n"
-"color:white;\n"
-"border-radius:15px;")
+"color:white;")
         self.list_note.setObjectName("list_note")
         self.save_btn4 = QtWidgets.QPushButton(self.centralwidget)
-        self.save_btn4.setGeometry(QtCore.QRect(720, 220, 75, 23))
+        self.save_btn4.setGeometry(QtCore.QRect(720, 200, 75, 23))
         self.save_btn4.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.save_btn4.setObjectName("save_btn4")
         self.delete_btn5 = QtWidgets.QPushButton(self.centralwidget)
-        self.delete_btn5.setGeometry(QtCore.QRect(720, 20, 75, 23))
+        self.delete_btn5.setGeometry(QtCore.QRect(720, 0, 75, 23))
         self.delete_btn5.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.delete_btn5.setObjectName("delete_btn5")
         self.search_btn6 = QtWidgets.QPushButton(self.centralwidget)
-        self.search_btn6.setGeometry(QtCore.QRect(620, 450, 75, 23))
+        self.search_btn6.setGeometry(QtCore.QRect(620, 420, 75, 23))
         self.search_btn6.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.search_btn6.setObjectName("search_btn6")
         self.open_btn3 = QtWidgets.QPushButton(self.centralwidget)
-        self.open_btn3.setGeometry(QtCore.QRect(720, 450, 75, 23))
+        self.open_btn3.setGeometry(QtCore.QRect(720, 420, 75, 23))
         self.open_btn3.setStyleSheet("background-color:white;\n"
 "color:black;\n"
 "border-radius:10px;")
         self.open_btn3.setObjectName("open_btn3")
         self.listWidget_2 = QtWidgets.QListWidget(self.centralwidget)
-        self.listWidget_2.setGeometry(QtCore.QRect(640, 260, 141, 171))
+        self.listWidget_2.setGeometry(QtCore.QRect(640, 240, 131, 171))
         self.listWidget_2.setStyleSheet("background-color:#0f3675;\n"
-"color:white;\n"
-"border-radius:15px;")
+"color:white;")
         self.listWidget_2.setObjectName("listWidget_2")
+        self.add_tag = QtWidgets.QPushButton(self.centralwidget)
+        self.add_tag.setGeometry(QtCore.QRect(670, 450, 75, 23))
+        self.add_tag.setStyleSheet("background-color:white;\n"
+"color:black;\n"
+"border-radius:10px;")
+        self.add_tag.setObjectName("add_tag")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 804, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -100,6 +102,7 @@ class Ui_MainWindow(object):
         self.delete_btn5.setText(_translate("MainWindow", "Видалити"))
         self.search_btn6.setText(_translate("MainWindow", "Шукати"))
         self.open_btn3.setText(_translate("MainWindow", "Відкрити"))
+        self.add_tag.setText(_translate("MainWindow", "Додати"))
 
 
 if __name__ == "__main__":
